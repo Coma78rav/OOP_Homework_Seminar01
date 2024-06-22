@@ -1,15 +1,37 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class ProductMain {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+package Seminar01.src;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+import Seminar01.src.impl.BottleOfWater;
+import Seminar01.src.impl.EPackage;
+import Seminar01.src.impl.HotDrinkVM;
+import Seminar01.src.impl.WaterVendingMachine;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProductMain {
+
+    public static void main(String[] args) {
+        Product bottle1 = new BottleOfWater("Родники", 55, LocalDate.of(2024, 5, 1));
+
+        Product bottle2 = new BottleOfWater("Родники Газированная", 55, LocalDate.of(2024, 5, 1),
+                true, EPackage.GLASS.getMaterial(), 0.5F);
+
+        VendingMachine vm = new WaterVendingMachine();
+
+        VendingMachine vm1 = new HotDrinkVM();
+
+        System.out.println(vm.getProducts());
+
+        vm.addProducts(List.of(bottle1, bottle1, bottle1, bottle2, bottle2, bottle2));
+
+        vm1.addProducts(new ArrayList<>());
+
+        System.out.println(vm.getProducts());
+
+        vm.getProduct("Родники");
+
+        System.out.println(vm.getProducts());
     }
 }
+

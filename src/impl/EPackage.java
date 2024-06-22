@@ -1,4 +1,14 @@
-package impl;
+package Seminar01.src.impl;
 
-public class EPackage {
+public enum EPackage {
+    PLASTIC("Пластик"), GLASS("Стекло"), POLYETILEN("Полиэтилен");
+
+    private final String material;
+    EPackage(String material){
+        this.material = material;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
 }
