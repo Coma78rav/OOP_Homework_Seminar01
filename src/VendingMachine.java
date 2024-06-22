@@ -17,9 +17,7 @@ public abstract class VendingMachine {
 
     public abstract void addProducts(List<Product> products);
 
-    public Product getProduct(String name) {
-
-//        products.stream().filter(product -> product.getName().equals(name)).findFirst().orElse(null);
+    public Product deleteProduct(String name) {
 
         for (Product product : products) {
             if (product.getName().equals(name)) {
@@ -27,22 +25,13 @@ public abstract class VendingMachine {
                 return product;
             }
         }
-
         System.out.println("No such product: " + name);
         return null;
     }
 
-//    public Product getProduct(String name) {
-//
-//        for (Product product : products) {
-//            if (product.getName().equals(name)) {
-//                products.remove(product);
-//                return product;
-//            }
-//        }
-//
-//        throw new RuntimeException("No such product: " + name);
-//    }
+    public void getProduct(String name, float volume, int temperature){
+        System.out.println("Product: " + name + ", Volume: " + volume + " l., " + "Temperature: " + temperature);
+    }
 
     public List<Product> getProducts() {
         return products;

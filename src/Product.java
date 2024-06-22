@@ -2,7 +2,6 @@ package Seminar01.src;
 
 import java.time.LocalDate;
 
-
     public class Product {
 
         protected String name;
